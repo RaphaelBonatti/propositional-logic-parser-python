@@ -22,7 +22,11 @@ You must ensure that every formula that includes a binary connective (&, |, =>, 
 
 Note: It's important to adhere to these formatting rules to avoid exceptions. 
 
-For example:
+To execute the script without modifying the project's structure, you have two options:
+- Normal solution: Install the project as a package in editable mode, run the script from any directory.
+- Alternative solution: run the program from the project's root directory and refer to the script as "python -m scripts.wff_visualizer" instead of "python scripts/wff_visualizer.py".
+
+For instance, if you choose the alternative solution, use the following command:
 ```
 $ python -m scripts.wff_visualizer -p -g "(~ (( ~A & (B1 | B2) )<=>C ) => D)"
 ```
