@@ -30,6 +30,7 @@ def main():
         print(f"Well-formed formula: {wff.toString()}")
     if args.generate:
         write_png_from_wff(wff)
+        print("The image wff.png has been generated in the project's root directory.")
 
 
 if __name__ == "__main__":
