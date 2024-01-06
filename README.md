@@ -20,11 +20,12 @@ Note: This project was tested using Python 3.10.9 on Linux.
     ```shell
     $ pip install -e .
     ```
-6. Install Graphviz which is a pydot dependency to be installed separately. It can be downloaded from https://graphviz.org/download/.
+    The package will be installed under the name `plparser`.
+6. Install `Graphviz` which is a `pydot` dependency to be installed separately. It can be downloaded from https://graphviz.org/download/.
 
 ## Usage
-To use the propositional logic parser, execute the plparser-cli command with the formula you want to parse as a command-line argument.
-You can use the flags -p or --print to print the formula and the argument -g or --generate followed by a filename to generate the corresponding PNG image.  
+To use the propositional logic parser, execute the `plparser-cli` command with the formula you want to parse as a command-line argument.
+You can use the flags `-p` or `--print` to print the formula and the argument `-g` or `--generate` followed by a filename to generate the corresponding PNG image.  
 
 You must ensure that every formula that includes a binary connective (&, |, =>, or <=>) is surrounded by parentheses. For example, write "(wff_1 & wff_2)" for a formula using the AND connective. Conversely, when utilizing the negation connective, omit the use of parentheses. Instead, use "\~wff" to represent a negated formula. A combination of the two rules allows to write "\~(wff_1 & wff_2)". By following these formatting rules, you can ensure that your formulas are unambiguous and correctly interpreted by the program.
 
@@ -39,7 +40,7 @@ The output will be:
 Well-formed formula: (¬((¬A ∧ (B1 ∨ B2)) ↔ C) → D)
 The image wff.png has been generated.
 ```
-Also, the following PNG image named wff.png will be created in the current directory.
+Also, the following PNG image named `wff.png` will be created in the current directory.
 
 ![The AST representation of the wff](images/wff.png)
 
@@ -49,17 +50,17 @@ See the LICENSE file for more information.
 
 ## Acknowledgements
 This project utilizes the following open-source libraries:
-- pydot
+- `pydot`:
   - Version: 2.0.0
   - License: MIT
   - Project website: https://github.com/pydot/pydot
   - Purpose: used for generating image of the AST.
-- pytest:
+- `pytest`:
   - Version: 7.4.4
   - License: MIT
   - Project website: https://docs.pytest.org
   - Purpose: used for testing purposes.
-- textX:
+- `textX`:
   - Version: 4.0.1
   - License: MIT
   - Project website: https://textx.github.io/textX
