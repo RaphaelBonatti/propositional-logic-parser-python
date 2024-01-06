@@ -9,15 +9,16 @@ def parse_args():
         prog="wff_visualizer",
         description="Enter a wff as string and visualize the parsed tree as png.",
     )
-    parser.add_argument("wff")
+    parser.add_argument("wff", type=str)
     parser.add_argument(
         "-p", "--print", action="store_true", help="print a formatted wff"
     )
     parser.add_argument(
         "-g",
         "--generate",
-        action="store_true",
-        help="generate a png representing an ast of the wff",
+        metavar="FILENAME",
+        help="give a name and generate a png representing an ast of the wff",
+        type=str,
     )
     return parser.parse_args()
 
@@ -29,8 +30,9 @@ def entrypoint():
     if args.print:
         print(f"Well-formed formula: {wff.toString()}")
     if args.generate:
-        write_png_from_wff(wff)
-        print("The image wff.png has been generated in the project's root directory.")
+        filename = args.generate
+        write_png_from_wff(wff, args.generate)
+        print(f"The image {filename}.png has been generated.")
 
 
 if __name__ == "__main__":
