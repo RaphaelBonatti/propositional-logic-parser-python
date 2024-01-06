@@ -3,7 +3,7 @@ requires = ["setuptools>=61.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "propositional-logic-parser"
+name = "plparser"
 version = "1.0"
 authors = [
     {name = "Raphael Bonatti"},
