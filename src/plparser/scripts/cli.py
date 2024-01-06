@@ -1,7 +1,7 @@
 import argparse
 
-from src.parser import wff_from_str
-from src.visualizer import write_png_from_wff
+from plparser.modules.parser import wff_from_str
+from plparser.modules.visualizer import write_png_from_wff
 
 
 def parse_args():
@@ -22,7 +22,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def entrypoint():
     args = parse_args()
     wff_str = args.wff
     wff = wff_from_str(wff_str)
@@ -34,4 +34,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    entrypoint()
