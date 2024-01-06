@@ -11,30 +11,37 @@ Note: This project was tested using Python 3.10.9 on Linux.
 1. Before starting, you need to have Python installed on your system.
 2. Clone or download the project repository.
 3. Create a virtual environment (optional but recommended) to isolate the project dependencies.
-4. Install the project dependencies listed in the requirements.txt file.
-5. Install Graphviz which is a pydot dependency to be installed separately. It can be downloaded from https://graphviz.org/download/.
+4. Activate your virtual environment and go to the project's root directory.
+5. Install the project as a package:
+    ```shell
+    $ pip install .
+    ```
+    You can alternatively install the project in editable mode by executing:
+    ```shell
+    $ pip install -e .
+    ```
+6. Install Graphviz which is a pydot dependency to be installed separately. It can be downloaded from https://graphviz.org/download/.
 
 ## Usage
-To use the propositional logic parser, execute the scripts/wff_visualizer.py file with the formula you want to parse as a command-line argument.
-You can use the flags -p or --print to print the formula and -g or --generate to generate the corresponding PNG image.  
+To use the propositional logic parser, execute the plparser-cli command with the formula you want to parse as a command-line argument.
+You can use the flags -p or --print to print the formula and the argument -g or --generate followed by a filename to generate the corresponding PNG image.  
 
 You must ensure that every formula that includes a binary connective (&, |, =>, or <=>) is surrounded by parentheses. For example, write "(wff_1 & wff_2)" for a formula using the AND connective. Conversely, when utilizing the negation connective, omit the use of parentheses. Instead, use "\~wff" to represent a negated formula. A combination of the two rules allows to write "\~(wff_1 & wff_2)". By following these formatting rules, you can ensure that your formulas are unambiguous and correctly interpreted by the program.
 
-Note: It's important to adhere to these formatting rules to avoid exceptions. 
+Note: It is important to adhere to these formatting rules to avoid exceptions. 
 
-To execute the script without modifying the project's structure, you have two options:
-- Normal solution: Install the project as a package in editable mode, run the script from any directory.
-- Alternative solution: run the program from the project's root directory and refer to the script as "python -m scripts.wff_visualizer" instead of "python scripts/wff_visualizer.py".
-
-For instance, if you choose the alternative solution, use the following command:
-```
-$ python -m scripts.wff_visualizer -p -g "(~ (( ~A & (B1 | B2) )<=>C ) => D)"
+Here is an example of using the CLI:
+```shell
+$ plparser-cli -p -g "wff" "(~ (( ~A & (B1 | B2) )<=>C ) => D)"
 ```
 The output will be:
 ```
-$ Well-formed formula: (¬((¬A ∧ (B1 ∨ B2)) ↔ C) → D)
+Well-formed formula: (¬((¬A ∧ (B1 ∨ B2)) ↔ C) → D)
+The image wff.png has been generated.
 ```
-Also, a PNG image named wff.png will be created in the project's root directory.
+Also, the following PNG image named wff.png will be created in the current directory.
+
+![The AST representation of the wff](images/wff.png)
 
 ## License
 This project is licensed under the Apache 2.0 license.
