@@ -5,8 +5,10 @@ The tool provides two main features:
 - Formatted Output: The parsed formula will be displayed with appropriate UTF-8 symbols and adequate spacing for improved readability.
 - Abstract Syntax Tree (AST) Visualization: The tool also generates a PNG image that visually represents the abstract syntax tree resulting from the formula parsing process. This helps users visualize the hierarchical structure of the formula and understand its logical composition.
 
+Additionally, the tool can be used as a library to parse formulas into tree-like objects, which can then be used in more complex systems.
 
-Note: This project was tested using Python 3.10.9 on Linux.
+Note: This project was tested using Python 3.10.9 on Ubuntu.
+
 ## Installation
 1. Before starting, you need to have Python installed on your system.
 2. Clone or download the project repository.
