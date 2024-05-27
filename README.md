@@ -1,11 +1,9 @@
 # propositional-logic-parser-python
 This Python tool is designed to parse propositional logic formulas. It enables the processing of logical formulas that involve symbols such as ~ (not), & (and), | (or), => (implies), and <=> (if and only if).
 
-The tool provides two main features:
-- Formatted Output: The parsed formula will be displayed with appropriate UTF-8 symbols and adequate spacing for improved readability.
-- Abstract Syntax Tree (AST) Visualization: The tool also generates a PNG image that visually represents the abstract syntax tree resulting from the formula parsing process. This helps users visualize the hierarchical structure of the formula and understand its logical composition.
-
-Additionally, the tool can be used as a library to parse formulas into tree-like objects, which can then be used in more complex systems.
+Additionally, it provides two features:
+- `to_string` method: The parsed formula will be displayed back with appropriate UTF-8 symbols and adequate spacing for improved readability.
+- Abstract Syntax Tree (AST) image generation: The tool also generates a PNG image that visually represents the abstract syntax tree resulting from the formula parsing process. This helps users visualize the hierarchical structure of the formula and understand its logical composition.
 
 Note: This project was tested using Python 3.10.9 on Ubuntu.
 
@@ -71,4 +69,4 @@ This project utilizes the following open-source libraries:
 Special thanks to the authors and contributors who dedicated their time and effort to develop these libraries. Their hard work and valuable contributions have greatly benefited the software development community.
 
 ## Contact
-If you have any questions or inquiries, please contact bonatti.raphael@gmail.com.
+If you have any questions or inquiries, please contact raphael.bonatti@algolance.com.
