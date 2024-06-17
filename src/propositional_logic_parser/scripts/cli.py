@@ -1,7 +1,7 @@
 import argparse
 
-from plparser.modules.parser import wff_from_str
-from plparser.modules.visualizer import write_png_from_wff
+from modules.parser import wff_from_str
+from modules.visualizer import write_png_from_wff
 
 
 def parse_args():

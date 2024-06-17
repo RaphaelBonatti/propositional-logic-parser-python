@@ -3,7 +3,7 @@ import io
 from pydot import graph_from_dot_data
 from textx.export import model_export_to_file
 
-from plparser.modules.parser import WFF
+from modules.parser import WFF
 
 
 def write_png_from_wff(wff: WFF, filename: str) -> None:

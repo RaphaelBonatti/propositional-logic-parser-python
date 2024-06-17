@@ -10,21 +10,15 @@ Note: This project was tested using Python 3.10.9 on Ubuntu.
 ## Installation
 1. Before starting, you need to have Python installed on your system.
 2. Clone or download the project repository.
-3. Create a virtual environment (optional but recommended) to isolate the project dependencies.
-4. Activate your virtual environment and go to the project's root directory.
-5. Install the project as a package:
+3. Install Poetry.
+4. Install the project with poetry. Run the following in the root of the project:
     ```shell
-    $ pip install .
+    $ poetry install
     ```
-    You can alternatively install the project in editable mode by executing:
-    ```shell
-    $ pip install -e .
-    ```
-    The package will be installed under the name `plparser`.
-6. Install `Graphviz` which is a `pydot` dependency to be installed separately. It can be downloaded from https://graphviz.org/download/.
+5. Install `Graphviz` which is a `pydot` dependency to be installed separately. It can be downloaded from https://graphviz.org/download/.
 
 ## Usage
-To use the propositional logic parser, execute the `plparser-cli` command with the formula you want to parse as a command-line argument.
+To use the propositional logic parser, activate the project environment and execute the `plparser-cli` command with the formula you want to parse as a command-line argument.
 You can use the flags `-p` or `--print` to print the formula and the argument `-g` or `--generate` followed by a filename to generate the corresponding PNG image.  
 
 You must ensure that every formula that includes a binary connective (&, |, =>, or <=>) is surrounded by parentheses. For example, write "(wff_1 & wff_2)" for a formula using the AND connective. Conversely, when utilizing the negation connective, omit the use of parentheses. Instead, use "\~wff" to represent a negated formula. A combination of the two rules allows to write "\~(wff_1 & wff_2)". By following these formatting rules, you can ensure that your formulas are unambiguous and correctly interpreted by the program.

@@ -1,24 +1,23 @@
-[build-system]
-requires = ["setuptools>=61.2"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "plparser"
-version = "1.0"
-authors = [
-    {name = "Raphael Bonatti"},
-]
+[tool.poetry]
+name = "propositional-logic-parser"
+version = "0.1.0"
 description = "Parse propositional logic formulas to print formatted output and generate PNG image of the AST."
-readme = {file = "README", content-type = "text/markdown"}
-license = {file = "LICENSE"}
-dependencies = [
-    "pydot==2.0.0",
-    "pytest==7.4.4",
-    "textx==4.0.1",
-]
+license = "Apache-2.0"
+authors = ["Raphael Bonatti"]
+readme = "README.md"
+packages = [{include = "propositional_logic_parser", from="src"}, {include = "modules", from="src/propositional_logic_parser"}]
 
-[project.scripts]
-plparser-cli = "plparser.scripts.cli:entrypoint"
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+textx = "==4.0.1"
+pydot = "==2.0.0"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.2"
+
+[tool.poetry.scripts]
+plparser-cli = "propositional_logic_parser.scripts.cli:entrypoint"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,4 +1,4 @@
-from plparser.modules.parser import wff_from_str
+from modules.parser import wff_from_str
 
 
 def test_simple_wff_to_string():
