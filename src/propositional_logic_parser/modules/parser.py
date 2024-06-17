@@ -17,7 +17,7 @@ Atom: id=ID;
 
 class WFF(ABC):
     @abstractmethod
-    def toString(self) -> str:
+    def to_string(self) -> str:
         pass
 
 
@@ -27,8 +27,8 @@ class Equivalence(WFF):
         self.lhs = wff[0]
         self.rhs = wff[1]
 
-    def toString(self) -> str:
-        return f"({self.lhs.toString()} ↔ {self.rhs.toString()})"
+    def to_string(self) -> str:
+        return f"({self.lhs.to_string()} ↔ {self.rhs.to_string()})"
 
 
 class Implication(WFF):
@@ -37,8 +37,8 @@ class Implication(WFF):
         self.lhs = wff[0]
         self.rhs = wff[1]
 
-    def toString(self) -> str:
-        return f"({self.lhs.toString()} → {self.rhs.toString()})"
+    def to_string(self) -> str:
+        return f"({self.lhs.to_string()} → {self.rhs.to_string()})"
 
 
 class Disjunction(WFF):
@@ -47,8 +47,8 @@ class Disjunction(WFF):
         self.lhs = wff[0]
         self.rhs = wff[1]
 
-    def toString(self) -> str:
-        return f"({self.lhs.toString()} ∨ {self.rhs.toString()})"
+    def to_string(self) -> str:
+        return f"({self.lhs.to_string()} ∨ {self.rhs.to_string()})"
 
 
 class Conjunction(WFF):
@@ -57,8 +57,8 @@ class Conjunction(WFF):
         self.lhs = wff[0]
         self.rhs = wff[1]
 
-    def toString(self) -> str:
-        return f"({self.lhs.toString()} ∧ {self.rhs.toString()})"
+    def to_string(self) -> str:
+        return f"({self.lhs.to_string()} ∧ {self.rhs.to_string()})"
 
 
 class Negation(WFF):
@@ -66,8 +66,8 @@ class Negation(WFF):
         self.parent = parent
         self.wff = wff
 
-    def toString(self) -> str:
-        return f"¬{self.wff.toString()}"
+    def to_string(self) -> str:
+        return f"¬{self.wff.to_string()}"
 
 
 class Atom(WFF):
@@ -75,7 +75,7 @@ class Atom(WFF):
         self.parent = parent
         self.id = id
 
-    def toString(self) -> str:
+    def to_string(self) -> str:
         return self.id
 
 
