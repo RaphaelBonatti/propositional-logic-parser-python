@@ -11,7 +11,7 @@ Note: This project was tested using Python 3.10.9 on Ubuntu.
 1. Before starting, you need to have Python installed on your system.
 2. Clone or download the project repository.
 3. Install Poetry.
-4. Install the project with poetry. Run the following in the root of the project:
+4. Install the project with Poetry. Run the following in the root of the project:
     ```shell
     $ poetry install
     ```
