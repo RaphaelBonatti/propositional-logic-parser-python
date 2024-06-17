@@ -1,3 +1,0 @@
-pydot==2.0.0
-pytest==7.4.4
-textx==4.0.1
