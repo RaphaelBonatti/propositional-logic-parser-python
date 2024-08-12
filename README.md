@@ -2,7 +2,7 @@
 This Python tool is designed to parse propositional logic formulas. It enables the processing of logical formulas that involve symbols such as ~ (not), & (and), | (or), => (implies), and <=> (if and only if).
 
 Additionally, it provides two features:
-- `to_string` method: The parsed formula will be displayed back with appropriate UTF-8 symbols and adequate spacing for improved readability.
+- `__str__` method: The parsed formula will be printed with appropriate UTF-8 symbols and adequate spacing for improved readability.
 - Abstract Syntax Tree (AST) image generation: The tool also generates a PNG image that visually represents the abstract syntax tree resulting from the formula parsing process. This helps users visualize the hierarchical structure of the formula and understand its logical composition.
 
 Note: This project was tested using Python 3.10.9 on Ubuntu.
