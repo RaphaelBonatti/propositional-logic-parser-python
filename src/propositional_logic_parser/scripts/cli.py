@@ -28,7 +28,7 @@ def entrypoint():
     wff_str = args.wff
     wff = wff_from_str(wff_str)
     if args.print:
-        print(f"Well-formed formula: {wff.to_string()}")
+        print(f"Well-formed formula: {wff}")
     if args.generate:
         filename = args.generate
         write_png_from_wff(wff, args.generate)
